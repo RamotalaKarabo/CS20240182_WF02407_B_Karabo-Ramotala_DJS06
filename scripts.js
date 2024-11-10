@@ -13,3 +13,36 @@ const products = [
   { product: 'coffee', price: 10 },
   { product: 'tea', price: '' },
 ]
+
+
+
+
+// Log each name
+names.forEach(name => console.log(name));
+
+// Log each province
+provinces.forEach(province => console.log(province));
+
+// Log each name with matching province
+names.forEach((name, index) => console.log(`${name} (${provinces[index]})`));
+
+const provincesUpper = provinces.map(province => province.toUpperCase());
+console.log(provincesUpper);
+
+const nameLengths = names.map(name => name.length);
+console.log(nameLengths);
+
+const sortedProvinces = [...provinces].sort();
+console.log(sortedProvinces);
+
+const filteredProvinces = provinces.filter(province => !province.includes('Cape'));
+console.log(filteredProvinces.length);
+
+const containsS = names.map(name => name.includes('S'));
+console.log(containsS);
+
+const nameProvinceMap = names.reduce((acc, name, index) => {
+  acc[name] = provinces[index];
+  return acc;
+}, {});
+console.log(nameProvinceMap);
